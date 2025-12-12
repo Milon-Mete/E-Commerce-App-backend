@@ -79,7 +79,7 @@ router.put("/update/:id", async (req, res) => {
         zip: req.body.zip
       },
       { new: true }
-    );
+    ).select("name email phone address city zip");
 
     res.json({ success: true, user: updated });
   } catch (err) {
